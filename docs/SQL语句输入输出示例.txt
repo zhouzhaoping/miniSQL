@@ -1,0 +1,152 @@
+SELECT *
+FROM Person1
+WHERE birthyear > 1990 and birthyear < 1993;
+
+SELECT *
+FROM Person1
+WHERE address = 'Yale_Street' OR gender = (select gender from Person1 where name = 'Sherry' and address = '150_Avenue') and name = (select name from Person1 where birthyear = 1992 and hobby = 'shopping');
+
+
+SELECT number,name,hobby as interest
+FROM Person1
+where gender = 'female';
+
+
+
+SELECT number,name
+FROM course
+WHERE (ClassNum > 2 and number < 700);
+
+
+SELECT number,name
+FROM course
+WHERE(ClassNum > 2 OR number < 700) and teacher='Prince';
+
+
+SELECT *
+FROM Person2
+ORDER BY name;
+
+
+
+
+In集合查询：
+
+SELECT *
+FROM Person1
+WHERE address = 'Yale_Street' OR hobby IN (select hobby from Person1 where gender = 'female'); 
+//In结束
+
+插入再查询：
+
+insert into Person1 values(45,'David','male','Rose Avenue','no',1989);
+SELECT *
+FROM Person1
+WHERE address = 'Rose Avenue';
+
+
+insert into fOrder (Ordernum) values(10000);
+SELECT *
+FROM fOrder;
+
+
+
+第三部分：更新
+
+1.基础更新：
+
+UPDATE fOrder SET Ordernum=97
+WHERE name='Jason';
+ 
+SELECT *
+FROM fOrder;
+
+
+2.多个值更新：
+
+UPDATE course SET teacher='Xavi',name='Eden',ClassNum=4
+WHERE name='Sue';
+
+SELECT *
+FROM course;
+
+
+
+第四部分：删除
+
+1.基本删除操作：
+
+DELETE FROM course
+WHERE ClassNum=5;
+
+SELECT *
+FROM course;
+
+
+2.删除所有元素但保留表
+
+DELETE FROM course;
+SELECT *
+FROM course;
+
+
+
+第五部分：内连接
+
+1.基本操作：
+
+SELECT Person1.number,Person1.name,fOrder.Ordernum,Person1.address
+FROM Person1,fOrder
+WHERE Person1.number=fOrder.number;
+
+number name   ordernum address
+76     Jason  2187     15 Avenue
+76     Jason  8700     15 Avenue
+112    Jason  901      15 Avenue
+651    Erving 651      Yale Street
+
+2.JOIN操作:
+
+SELECT Person1.number, Person1.name, fOrder.Ordernum
+FROM Person1
+INNER JOIN fOrder
+on Person1.number=fOrder.number
+ORDER BY fOrder.Ordernum;
+
+
+
+
+第六部分：语句嵌套
+
+1.基本嵌套（单个元素）：
+
+SELECT name 
+FROM Person2 
+WHERE address = 
+(SELECT address FROM Person1 WHERE name = 'Sue');
+
+
+
+
+2.基本嵌套（元素集合）
+SELECT name,number 
+FROM Person1 WHERE address IN 
+(SELECT address FROM Person1 WHERE gender = 'female')
+Order by name;
+
+
+
+SELECT *
+FROM Person1
+Order by number;
+
+select *
+from fOrder
+order by number DESC, Ordernum ASC;
+
+
+
+
+
+
+

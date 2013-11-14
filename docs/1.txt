@@ -1,0 +1,55 @@
+Person1 6 9
+number	name	gender	address	        hobby	        birthyear
+309	Carter	male	Oxford_Street	tennis	        1992
+76	Jason	male	15_Avenue	games	        1990
+781	Bruce	male	Yale_Street	tennis	        1993
+657	Sue	female	Oxford_Street	shopping	1992
+725	Sherry	female	150_Avenue	Swimming	1991
+112	Jason	male	15_Avenue	games	        1990
+761	Adams	male	George_Town	programming	1991
+651	Erving	female	Yale_Street	tennis	        1994
+8	Jade	male	Duke_Avenue	swimming	1992
+
+fOrder 3 7
+Ordernum  name    number
+2187	  Jason	  76
+3718	  Jade	  10
+3190	  Holy	  92
+7610	  Erving  651
+8700	  Jason   76
+901	  Jason	  112
+800       Jason	  81
+
+Person2 6 7
+number	name	gender	address	        birthyear	major
+8	Jade	male	Duke_Avenue	1992	        Physics
+289	Usher	male	Parsons_Street	1991	        Mathematics
+112	Jason	male	15_Avenue	1990	        Literature
+209	Mary	female	87_Street	1993	        Art
+657	Sue	female	Oxford_Street	1992	        Art
+92	Holy	female	Duke_Avenue	1991	        Law
+100     Jason   male    Parsons_Street  1993            Computer
+
+course 4 5
+ClassNum	name	number	teacher
+5	        Adams	761	Prince
+6	        Erving	651	O'Neal
+5	        Sue	657	Prince
+1	        Tony	113	Rose
+2	        Jason	76	Prince
+
+goods 3 3
+sort     price   amount
+Study    10      1000
+Study    8       902
+teaching 998     5  
+
+END
+
+
+
+
+
+
+
+
